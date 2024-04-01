@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dragonballai</title>
     <meta name="description" content="" />
-    <link rel="icon" href="images/dragonballal1.png" type="image/png" sizes="16x16">
-    <link rel="icon" href="images/dragonballal1.png" type="image/png" sizes="32x32">
-    <link rel="apple-touch-icon" href="images/dragonballal1.png" sizes="180x180">
+    <link rel="icon" href="images/logo_dragon.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="images/logo_dragon.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="images/logo_dragon.png" sizes="180x180">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dragonballai.xyz/">
     <meta property="og:title" content="dragonballai">
@@ -5526,327 +5526,46 @@
         nonce='81e7f0a6-9fa3-4025-950b-256fe0632e07'>!function () { "use strict"; function t(t, n) { let e; return (...o) => { clearTimeout(e), e = setTimeout((() => { t(...o) }), n) } } class n { constructor() { this.callbacks = [], window.addEventListener("DOMContentLoaded", (() => this.onDOMContentLoaded())) } onDOMContentLoaded() { this.callbacks.sort(((t, n) => t.priority - n.priority)).forEach((({ callback: t }) => t())) } runOnLoad(t) { "loading" === document.readyState ? this.callbacks.push(t) : t.callback() } } function e(t, e = Number.MAX_VALUE) { var o; (window.canva_scriptExecutor = null !== (o = window.canva_scriptExecutor) && void 0 !== o ? o : new n).runOnLoad({ callback: t, priority: e }) } class o { constructor(t) { this.items = [], this.previousWidth = document.documentElement.clientWidth, this.previousHeight = window.innerHeight; const n = t((() => this.onWindowResize()), 100); window.addEventListener("resize", n) } onWindowResize() { const t = document.documentElement.clientWidth, n = window.innerHeight, e = this.previousWidth !== t, o = this.previousHeight !== n; this.items.forEach((t => { const n = () => { t.callback(), t.executed = !0 }; (!t.executed || e && t.options.runOnWidthChange || o && t.options.runOnHeightChange) && n() })), this.previousWidth = t, this.previousHeight = n } runOnResize(t, n) { this.items.push({ callback: t, options: n, executed: n.runOnLoad }), this.items.sort(((t, n) => t.options.priority - n.options.priority)), n.runOnLoad && e(t, n.priority) } } function i(n, e, i = t) { var r; (window.canva_debounceResize = null !== (r = window.canva_debounceResize) && void 0 !== r ? r : new o(i)).runOnResize(n, { runOnLoad: !1, runOnWidthChange: !0, runOnHeightChange: !1, priority: Number.MAX_VALUE, ...e }) } const r = "--minfs", c = "--rzf", u = "--rfso", s = "--bfso"; function a(t, n, e = .001) { return Math.abs(t - n) < e } function d(t, n) { return window.getComputedStyle(t).getPropertyValue(n) } function l(t, n, e) { t.style.setProperty(n, e) } function m(t, n) { const e = document.createElement("div"); e.style.setProperty(t, n), document.body.append(e); const o = d(e, t); return e.remove(), o } function f() { const t = function () { const t = parseFloat(m("font-size", "0.1px")); return t > 1 ? t : 0 }(), n = function (t) { const n = 2 * Math.max(t, 1); return n / parseFloat(m("font-size", `${n}px`)) }(t); if (function (t) { if (0 === t) return; l(document.documentElement, r, `${t}px`), i((() => { const n = 100 * t, { clientWidth: e } = document.documentElement; l(document.documentElement, c, n > e ? (e / n).toPrecision(4) : null) }), { runOnLoad: !0 }) }(t * Math.max(1, n)), a(n, 1)) return; const e = a(parseFloat(d(document.documentElement, "font-size")), parseFloat(m("grid-template-columns", "1rem"))); l(document.documentElement, e ? u : s, n.toPrecision(4)) } function h() { document.querySelectorAll("img, image, video, svg").forEach((t => t.addEventListener("contextmenu", (t => t.preventDefault())))) } const p = "--sbw", g = "--inner1Vh"; function w(t, n, e) { t.style.setProperty(n, e) } function v() { w(document.documentElement, g, window.innerHeight / 100 + "px"), function () { const t = window.innerWidth - document.documentElement.clientWidth; w(document.documentElement, p, t >= 0 ? `${t}px` : null) }() } var y; const E = "undefined" != typeof window ? null === (y = window.navigator) || void 0 === y ? void 0 : y.userAgent : void 0; const b = !(!E || (O = E, !O.match(/AppleWebKit\//) || O.match(/Chrome\//) || O.match(/Chromium\//))); var O; function L() { document.querySelectorAll("svg").forEach((t => t.style.background = "url('data:image/png;base64,')")) } let x; function A() { x || (x = Array.from(document.querySelectorAll("foreignObject")).filter((t => 0 === t.getBoundingClientRect().width))); const t = function () { const t = document.createElement("div"); t.style.fontSize = "100vw", document.body.append(t); const n = parseFloat(window.getComputedStyle(t).fontSize); return t.remove(), n / window.innerWidth }(); Array.from(x).forEach((n => function (t) { return new Promise(((n, e) => { const o = t.querySelector("img"); o && !o.complete ? (o.addEventListener("load", (() => n())), o.addEventListener("error", (() => e()))) : n() })) }(n).finally((() => function (t, n) { const e = Array.from(t.children); e.forEach(((t, n) => { if (t.hasAttribute("data-foreign-object-container")) t.style.transformOrigin = "", t.style.transform = ""; else { const o = document.createElement("div"); o.setAttribute("data-foreign-object-container", ""), t.insertAdjacentElement("beforebegin", o), t.remove(), o.append(t), e[n] = o } })); const o = t.getScreenCTM(); if (!o) return; const { a: i, b: r, c: c, d: u } = o.scale(n); e.forEach((t => { if (!t.hasAttribute("data-foreign-object-container")) return; const { style: n } = t; n.transformOrigin = "0px 0px", n.transform = `matrix(${i}, ${r}, ${c}, ${u}, 0, 0)` })) }(n, t))))) } [function () { e(f) }, function () { i(v, { runOnLoad: !0, runOnHeightChange: !0, priority: 1 }) }, function () { b && i(A, { runOnLoad: !0 }) }, function () { b && e(L) }, function () { e(h) }].forEach((t => t())) }();</script>
 </head>
 
-<body>
+<body style="background-color: #000000;">
     <div id="root"><a id="title" aria-hidden="true" style="visibility:hidden;"></a>
-        <section id="ZHPIIPVyKWzkn8co"
-            style="position:relative;overflow:hidden;display:grid;align-items:center;grid-template-columns:auto 100rem auto;z-index:0;">
-            <div id="HxfmMoltL9uXD1c1"
-                style="grid-area:1 / 1 / 2 / 4;display:grid;position:absolute;min-height:100%;min-width:100%;">
-                <div id="W9coAo3sHgyBnYu2" style="z-index:0;">
-                    <div id="NMj4UYMKm3spMiVN"
-                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
-                        <div id="UC2rMgKJOz8iFhea" style="width:100%;height:100%;opacity:1.0;">
-                            <div id="fDZ4rSZ2m2bY4dZX"
-                                style="background-color:#000000;opacity:1.0;transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
-                            </div>
+        <section>
+            <main>
+                <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+                    
+                    
+                    <div class="col-md-6 p-lg-5 mx-auto my-5">
+                        <img src="./images/DRAGONBALL mascot.png" height="125.34375em alt="" srcset="">
+                        <h1 class="display-3 fw-bold">Dragon Ball AI, the cutest doge with</h1>
+                        <h3 class="fw-normal text-muted mb-3">🔥 DRAGON
+                                                    POWER! 🐲</h3>
+                    
+                    </div>
+                    <div class="product-device shadow-sm d-none d-md-block"></div>
+                    <div class="product-device product-device-2 shadow-sm d-none d-md-block">
+                    </div>
+                </div>
+                </main>
+        </section>
+        <section style="background-color: #000000;" >
+            <div class="col-md-6 p-lg-5 mx-auto my-5 ">
+                <div class="container">
+                    <div style="color: #e7e7e7; font-size: 4em;" class="row">
+                        <div class="col border border-warning rounded-pill"><a href="#" "  class="display-3 fw-bold ">Presale</a></div>
+                        <div class="col border border-warning rounded-pill"><a href="https://t.me/DragonBallAI_ANN" class="display-3 fw-bold ">Announcement</a></div>
+                        <div class="w-100"></div>
+                        <div class="col border border-warning rounded-pill"><a href="https://t.me/DragonBall_AI" class="display-3 fw-bold   ">Telegram</a></div>
+                        <div class="col border border-warning rounded-pill"><a href="https://x.com/_dragonballai?s=21" class="display-3 fw-bold ">Twitter</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="dNfqakIBHrOqbO2R" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
-                <div id="kxB2DVTnrYypNk3U">
-                    <div id="OBGGixnC8srmeNzC" style="display:grid;position:relative;">
-                        <div id="ldFMCkrnVkyBIypu" style="z-index:1;">
-                            <div id="AnRWHU6dqxLQ4co1"
-                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);"><a
-                                    id="NiO8CkxulQfkGLMh" target="_blank" rel="noopener"
-                                    href="_link/index.html%3Flink=https:%252F%252Fnft.dragonballai.xyz&amp;target=Dgflsq88TYUOaV2p0prVBDGkp9tzZ6iPEt48B9f%252FECzPNDm4lbmV1VI+hKW1SsfyWT9fOysWQQTFfiKif3upnRwP4rznjo5lqt4=&amp;iv=SLsKHikP8%252FlDkyf8.html"
-                                    style="pointer-events:all;"><svg id="EXKQp8jvHwmduu9c"
-                                        viewBox="0 0 127.9631 31.7802" preserveAspectRatio="none"
-                                        style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(https://dragonballai.xyz/&);">
-                                        <defs>
-                                            <lineargradient id="FuQ2MVgA9MXux1bz" gradientUnits="userSpaceOnUse" x1="0"
-                                                y1="16" x2="128" y2="16">
-                                                <stop offset="0%" stop-color="#0d00d6" stop-opacity="1"></stop>
-                                                <stop offset="33.33333333%" stop-color="#8929c9" stop-opacity="1">
-                                                </stop>
-                                                <stop offset="66.66666667%" stop-color="#c9297b" stop-opacity="1">
-                                                </stop>
-                                                <stop offset="100%" stop-color="#f97e1d" stop-opacity="1"></stop>
-                                            </lineargradient>
-                                        </defs>
-                                        <g id="wDSauFPjq5qA448g" style="transform:scale(1, 1);">
-                                            <g id="HaSsmijluRkzi9Ph" style="clip-path:url(index.html);">
-                                                <clippath id="M3G2UlNyeaPokRqc">
-                                                    <path
-                                                        d="M111.96310425,0 C120.79965973,0 127.96310425,7.11423779 127.96310425,15.89009476 C127.96310425,24.66595078 120.79965973,31.78018951 111.96310425,31.78018951 L16,31.78018951 C7.16344404,31.78018951 0,24.66595078 0,15.89009476 C0,7.11423779 7.16344404,0 16,0 L111.96310425,0 Z">
-                                                    </path>
-                                                </clippath>
-                                                <path id="k7Q6NK3Y3N5b0XzP"
-                                                    d="M111.96310425,0 C120.79965973,0 127.96310425,7.11423779 127.96310425,15.89009476 C127.96310425,24.66595078 120.79965973,31.78018951 111.96310425,31.78018951 L16,31.78018951 C7.16344404,31.78018951 0,24.66595078 0,15.89009476 C0,7.11423779 7.16344404,0 16,0 L111.96310425,0 Z"
-                                                    fill="url(#FuQ2MVgA9MXux1bz)"></path>
-                                                <path id="GDjzLkFbT2lmf9X4"
-                                                    d="M111.96310425,0 C120.79965973,0 127.96310425,7.11423779 127.96310425,15.89009476 C127.96310425,24.66595078 120.79965973,31.78018951 111.96310425,31.78018951 L16,31.78018951 C7.16344404,31.78018951 0,24.66595078 0,15.89009476 C0,7.11423779 7.16344404,0 16,0 L111.96310425,0 Z"
-                                                    style="fill:none;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke:#000000;">
-                                                </path>
-                                            </g>
-                                        </g>
-                                    </svg></a></div>
-                        </div>
-                        <div id="vWTsXNU5sMZtRhyZ" style="z-index:2;pointer-events:none;">
-                            <div id="IOklVwVnl8xMKJwr"
-                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
-                                <div id="xfIOYHqTNA0xOZMU"
-                                    style="writing-mode:horizontal-tb;opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
-                                    <p id="sPOdNjAFKuCLNTnX"
-                                        style="color:#ffffff;font-family:YAFcf6WCo2Q-0;line-height:0.89450196em;text-align:justify;text-transform:uppercase;letter-spacing:-0.02em;">
-                                        <a id="Db1RBnWisvxyBx64" target="_blank" rel="noopener"
-                                            href="_link/index.html%3Flink=https:%252F%252Fstake-nft.dragonballai.xyz&amp;target=PUpP2B1IBzTiL7G37xUEGTkuMz0qSJTWtWBnoVR6UCSqb2cDc72Vrwlq3O9548Cr5HOtoaBsrKSWa0IkaWh1qQKG1mtWegXX7boPBmVF5js=&amp;iv=lPgsBSaPik8Tj32Y.html"
-                                            style="text-decoration-line:underline;color:#ffffff;font-weight:700;pointer-events:all;">龍珠AI</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="NGNI0kWb0KVX57UR" style="z-index:18;">
-                    <div id="muWG0T0UqrXwbD1P" style="box-sizing:border-box;width:100%;height:100%;">
-                        <div class="animation_container" style="width:100%;height:100%;">
-                            <div style="width:100%;height:100%;transform:rotate(0deg);overflow:hidden;">
-                                <div class="animated"
-                                    style="width:100%;height:100%;animation:baseline-LEFT-adf483ca-852c-4416-908c-9f6b1606ed23 2500ms 100ms both paused;">
-                                    <div id="hurTw9y06JbdNzaF"
-                                        style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
-                                        <p id="PxqYNwocej1xSH5o"
-                                            style="color:#ffffff;font-family:YAFcf6WCo2Q-0;line-height:1.09483273em;text-align:center;letter-spacing:-0.01em;">
-                                            <span id="s8NaWEk3zrqSS9xT" style="color:#ffffff;font-weight:700;">
-                                                Introducing the one and only Dragon Ball AI, the cutest doge of the crypto
-                                                universe with</span></p>
-                                        <p id="R3q3Dwdih5yKe16b"
-                                            style="color:#ffffff;font-family:YAFcf6WCo2Q-0;line-height:1.09483273em;text-align:center;text-transform:none;letter-spacing:-0.01em;">
-                                            <span id="DvbaPGmoTYAnlfnM" style="color:#ffffff;font-weight:700;">🔥 DRAGON
-                                                POWER! 🐲 </span><br></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="P6YfduvZFnNgwLqH">
-                    <div id="z49APrrN13Irzk5t" style="display:grid;position:relative;">
-                        <div id="bUSqFUvZ4lhCmBpp" style="z-index:5;">
-                            <div id="Y5CQrwHJAHhCsuNS" style="padding-top:96.375%;transform:rotate(0deg);">
-                                <div id="FvbhyqAPjRGRKBMw"
-                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
-                                    <div id="Sf8HvcZSSxIoai9o" style="width:100%;height:100%;opacity:0.36;">
-                                        <div id="E7P6R6ShVHBvK3DP"
-                                            style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
-                                            <div id="mVSVs46VxSaB38O7"
-                                                style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
-                                                <img src="images/smalldragonballal.png"
-                                                    alt="Blue Cute Dragon kids" loading="lazy"
-                                                    srcset="images/smalldragonballal.png 525w, images/smalldragonballal.png 788w"
-                                                    sizes="(max-width: 375px) 33.56491408vw, (min-width: 375.05px) and (max-width: 480px) 34.24991233vw, (min-width: 480.05px) and (max-width: 768px) 33.63830675vw, (min-width: 768.05px) and (max-width: 1024px) 34.40281372vw, (min-width: 1024.05px) 36.69633464vw"
-                                                    style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="uPO61PfLqhTLAtrE" style="display:grid;position:relative;grid-area:3 / 3 / 4 / 5;">
-                            <div id="QBp69ezFbacRCkZh" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
-                                <div id="SigU0egXr5GsuE5t" style="z-index:7;">
-                                    <div id="SjmHWWRuQ6ljqZow" style="padding-top:26.48875608%;">
-                                        <div id="yBeDd6CrMYN6wyCM"
-                                            style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
-                                            <div class="animation_container" style="width:100%;height:100%;">
-                                                <div class="animated"
-                                                    style="width:100%;height:100%;animation:fade-LEFT-50289728-c822-49f4-9836-7312331194cb 1219ms 100ms both paused;">
-                                                    <svg id="Lf2bBoJpOCV9DJHE" viewBox="0 0 54.1587 14.346"
-                                                        style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url();">
-                                                        <g id="W0jE0Gb9Vhu0uiz9" style="transform:scale(1, 1);">
-                                                            <path id="ufi44XMHpl4mqslS"
-                                                                d="M7.17298841,0 L46.98575258,0 C48.88814739,0 50.71262506,0.75572339 52.05782133,2.10091966 53.4030176,3.44611593 54.158741,5.2705936 54.158741,7.17298841 L54.158741,7.17298841 C54.158741,9.07538322 53.4030176,10.8998609 52.05782133,12.24505717 50.71262506,13.59025344 48.88814739,14.34597683 46.98575258,14.34597683 L7.17298841,14.34597683 C5.2705936,14.34597683 3.44611593,13.59025344 2.10091966,12.24505716 0.75572339,10.89986089 0,9.07538322 0,7.17298841 L0,7.17298841 C0,5.27059361 0.75572339,3.44611594 2.10091966,2.10091967 3.44611593,0.7557234 5.2705936,0 7.17298841,0 Z"
-                                                                style="fill:#ffffff;opacity:1.0;"></path>
-                                                        </g>
-                                                    </svg></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="TSRkvWBRd4JcbjZx" style="z-index:8;">
-                                    <div id="OQUo07OzsV9fYYnD" style="box-sizing:border-box;width:100%;height:100%;">
-                                        <div class="animation_container" style="width:100%;height:100%;">
-                                            <div class="animated"
-                                                style="width:100%;height:100%;animation:fade-LEFT-a9ed1222-c889-491f-9967-4610fef9f25d 1219ms 100ms both paused;">
-                                                <div id="oW9O6yM6ZIs9O3D8"
-                                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:center;width:100%;height:100%;">
-                                                    <p id="DEQ2Xfm3dWwHdpSC"
-                                                        style="color:#000000;font-family:YAFcf4DBkxw-0;line-height:1.39285466em;text-align:center;text-transform:uppercase;letter-spacing:0em;">
-                                                        <a id="ZDkSeGGMP2QiONET" target="_blank" rel="noopener"
-                                                            href="#"
-                                                            style="text-decoration-line:underline;color:#000000;font-weight:700;pointer-events:all;">presale</a><br>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="kjuFb8aaVstUjBWA" style="display:grid;position:relative;grid-area:5 / 4 / 7 / 6;">
-                            <div id="aOK0wMpQVrbaye38" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
-                                <div id="cAAFdwyO79iSf4hN" style="z-index:13;">
-                                    <div id="fbHy1UIxXTx8KXLg" style="padding-top:26.48875608%;">
-                                        <div id="DyVcU9HFhifjhbKy"
-                                            style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
-                                            <div class="animation_container" style="width:100%;height:100%;">
-                                                <div class="animated"
-                                                    style="width:100%;height:100%;animation:fade-LEFT-1aed7a97-d698-4563-ad6d-c4ad86286e6e 1219ms 100ms both paused;">
-                                                    <svg id="QjHX7quwOJFmaJPf" viewBox="0 0 54.1587 14.346"
-                                                        style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(https://dragonballai.xyz/&);">
-                                                        <g id="g2fyFatvbokP8Gt2" style="transform:scale(1, 1);">
-                                                            <path id="COwYRBg8gicttY8F"
-                                                                d="M7.17298841,0 L46.98575258,0 C48.88814739,0 50.71262506,0.75572339 52.05782133,2.10091966 53.4030176,3.44611593 54.158741,5.2705936 54.158741,7.17298841 L54.158741,7.17298841 C54.158741,9.07538322 53.4030176,10.8998609 52.05782133,12.24505717 50.71262506,13.59025344 48.88814739,14.34597683 46.98575258,14.34597683 L7.17298841,14.34597683 C5.2705936,14.34597683 3.44611593,13.59025344 2.10091966,12.24505716 0.75572339,10.89986089 0,9.07538322 0,7.17298841 L0,7.17298841 C0,5.27059361 0.75572339,3.44611594 2.10091966,2.10091967 3.44611593,0.7557234 5.2705936,0 7.17298841,0 Z"
-                                                                style="fill:#ffffff;opacity:1.0;"></path>
-                                                        </g>
-                                                    </svg></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="QLOscDwqb1hR2zLq" style="z-index:14;">
-                                    <div id="DvIXRP4EWobJwQ27" style="box-sizing:border-box;width:100%;height:100%;">
-                                        <div class="animation_container" style="width:100%;height:100%;">
-                                            <div class="animated"
-                                                style="width:100%;height:100%;animation:fade-LEFT-94446cd6-6167-48f0-ade2-cc093deb687f 1219ms 100ms both paused;">
-                                                <div id="kVFCne6taTt08EVS"
-                                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:center;width:100%;height:100%;">
-                                                    <p id="U01EEyri7gyObOql"
-                                                        style="color:#000000;font-family:YAFcf4DBkxw-0;line-height:1.39285466em;text-align:center;text-transform:uppercase;letter-spacing:0em;">
-                                                        <a id="YCok7FzKgLllpKm2" target="_blank" rel="noopener"
-                                                            href="https://t.me/DragonBall_AI"
-                                                            style="text-decoration-line:underline;color:#000000;font-weight:700;pointer-events:all;">telegram</a><br>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="eNvl9YLq4suYW14P" style="z-index:3;">
-                    <div id="D2kngAzS6qUZ0y1k" style="padding-top:96.875%;transform:rotate(0deg);">
-                        <div id="mFBUzZ5dvYXCUIEB" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
-                            <div id="BWMeCUevNk38egT0" style="width:100%;height:100%;opacity:1.0;">
-                                <div id="t61JRRifQuDytQSG"
-                                    style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
-                                    <div id="cvKNSMgEpMDGj5V1"
-                                        style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
-                                        <img src="images/smalldragonballal.png" loading="lazy"
-                                            style="width:80%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);"-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="HRX6veXu2n4dxIbg" style="z-index:4;">
-                    <div id="nJQN9bntceKVnq1K" style="padding-top:96.875%;transform:rotate(0deg);">
-                        <div id="h2aiOqe7fBfqT6yO" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
-                            <div id="eQz8Nvg9YANgOTvm" style="width:100%;height:100%;opacity:1.0;">
-                                <div id="BCNEFpbd9frarejG"
-                                    style="transform:scale(-1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
-                                    <div id="p4pquuKLiLvVanSn"
-                                        style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
-                                        <img src="images/smalldragonballal.png" loading="lazy"
-                                            style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);"-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="tqLbc27xLuBFXeP5">
-                    <div id="VtTPYIKglyoM46Y6" style="display:grid;position:relative;">
-                        <div id="LdEHbdydlIqhzcvV" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
-                            <div id="QlAjNKgYEOpV4lU4" style="z-index:16;">
-                                <div id="b835HipljB0R9FMp" style="padding-top:26.48875608%;">
-                                    <div id="sl3wTOZXUnhnbiyh"
-                                        style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
-                                        <div class="animation_container" style="width:100%;height:100%;">
-                                            <div class="animated"
-                                                style="width:100%;height:100%;animation:fade-RIGHT-ca027168-bdf5-4643-a5fa-6f2a1d566c9a 1219ms 100ms both paused;">
-                                                <svg id="VXFEx8NpuqmsPE0x" viewBox="0 0 54.1587 14.346"
-                                                    style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(https://dragonballai.xyz/&);">
-                                                    <g id="X3MpJv8IaafBPBiO" style="transform:scale(1, 1);">
-                                                        <path id="gvHCNT6orFfvkTos"
-                                                            d="M7.17298841,0 L46.98575258,0 C48.88814739,0 50.71262506,0.75572339 52.05782133,2.10091966 53.4030176,3.44611593 54.158741,5.2705936 54.158741,7.17298841 L54.158741,7.17298841 C54.158741,9.07538322 53.4030176,10.8998609 52.05782133,12.24505717 50.71262506,13.59025344 48.88814739,14.34597683 46.98575258,14.34597683 L7.17298841,14.34597683 C5.2705936,14.34597683 3.44611593,13.59025344 2.10091966,12.24505716 0.75572339,10.89986089 0,9.07538322 0,7.17298841 L0,7.17298841 C0,5.27059361 0.75572339,3.44611594 2.10091966,2.10091967 3.44611593,0.7557234 5.2705936,0 7.17298841,0 Z"
-                                                            style="fill:#ffffff;opacity:1.0;"></path>
-                                                    </g>
-                                                </svg></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="mJCnK5CgbhrQ47Iz" style="z-index:17;">
-                                <div id="zUIwru4Lad5K5fOe" style="box-sizing:border-box;width:100%;height:100%;">
-                                    <div class="animation_container" style="width:100%;height:100%;">
-                                        <div class="animated"
-                                            style="width:100%;height:100%;animation:fade-RIGHT-81b00ede-0367-4cca-984f-7868583a6ffd 1219ms 100ms both paused;">
-                                            <div id="ZBXnuddtfEmxtXzJ"
-                                                style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:center;width:100%;height:100%;">
-                                                <p id="lcT1PiKtgPPhE6Q6"
-                                                    style="color:#000000;font-family:YAFcf4DBkxw-0;line-height:1.39285466em;text-align:center;text-transform:uppercase;letter-spacing:0em;">
-                                                    <a id="KRqNTzkBfOHSM7BO" target="_blank" rel="noopener"
-                                                        href="https://t.me/DragonBallAI_ANN"
-                                                        style="text-decoration-line:underline;color:#000000;font-weight:700;pointer-events:all;">Announcement</a><br>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="cyShJsuvzDtBV8ji">
-                    <div id="jrJdzD1Xk6Ay3JWu" style="display:grid;position:relative;">
-                        <div id="iApHRxfbyAPwK09t" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
-                            <div id="aLlyOEK5yOhJvu5W" style="z-index:10;">
-                                <div id="wgLzNWdHxkLzLDVW" style="padding-top:26.48875608%;">
-                                    <div id="RI3fYstVxcs5dfWk"
-                                        style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
-                                        <div class="animation_container" style="width:100%;height:100%;">
-                                            <div class="animated"
-                                                style="width:100%;height:100%;animation:fade-RIGHT-367dff59-0b3c-44f1-b280-ee6c38076a57 1219ms 100ms both paused;">
-                                                <svg id="liQrwjVsdP5rQW7a" viewBox="0 0 54.1587 14.346"
-                                                    style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(https://dragonballai.xyz/&);">
-                                                    <g id="Dk93xXiK0womYrR9" style="transform:scale(1, 1);">
-                                                        <path id="g2KKXICIxY6WnLAw"
-                                                            d="M7.17298841,0 L46.98575258,0 C48.88814739,0 50.71262506,0.75572339 52.05782133,2.10091966 53.4030176,3.44611593 54.158741,5.2705936 54.158741,7.17298841 L54.158741,7.17298841 C54.158741,9.07538322 53.4030176,10.8998609 52.05782133,12.24505717 50.71262506,13.59025344 48.88814739,14.34597683 46.98575258,14.34597683 L7.17298841,14.34597683 C5.2705936,14.34597683 3.44611593,13.59025344 2.10091966,12.24505716 0.75572339,10.89986089 0,9.07538322 0,7.17298841 L0,7.17298841 C0,5.27059361 0.75572339,3.44611594 2.10091966,2.10091967 3.44611593,0.7557234 5.2705936,0 7.17298841,0 Z"
-                                                            style="fill:#ffffff;opacity:1.0;"></path>
-                                                    </g>
-                                                </svg></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="mk1jHYiGP15aXwws" style="z-index:11;">
-                                <div id="AvfCX1gCCZIYNVQK" style="box-sizing:border-box;width:100%;height:100%;">
-                                    <div class="animation_container" style="width:100%;height:100%;">
-                                        <div class="animated"
-                                            style="width:100%;height:100%;animation:fade-RIGHT-f61954a0-ab97-4949-8286-70435b3cc0ea 1219ms 100ms both paused;">
-                                            <div id="bbMr3qgkpxepEubf"
-                                                style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:center;width:100%;height:100%;">
-                                                <p id="xeRXysqmRLpUxsHJ"
-                                                    style="color:#000000;font-family:YAFcf4DBkxw-0;line-height:1.39285466em;text-align:center;text-transform:uppercase;letter-spacing:0em;">
-                                                    <a id="rKE4t509U77JhSla" target="_blank" rel="noopener"
-                                                        href="https://x.com/_dragonballai?s=21"
-                                                        style="text-decoration-line:underline;color:#000000;font-weight:700;pointer-events:all;">twitter</a><br>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section><a id="portfolio" aria-hidden="true" style="visibility:hidden;"></a>
+                    
+
+                
+            
+        </section>
+        <a id="portfolio" aria-hidden="true" style="visibility:hidden;"></a>
+        
         <section id="YraEotmOTyVJn5S6"
             style="position:relative;overflow:hidden;display:grid;align-items:center;grid-template-columns:auto 100rem auto;z-index:0;margin-top:-1px;">
             <div id="jAnOF00EYi2Gm1gd"
@@ -5982,6 +5701,7 @@
                
             </div>
         </section><a id="portfolio-2" aria-hidden="true" style="visibility:hidden;"></a>
+        <a id="portfolio-2" aria-hidden="true" style="visibility:hidden;"></a>
         <section>
             <div class="d-flex flex-column" style="color:#ffffff; text-align: center; background-color: #000000;">
                 
@@ -6006,7 +5726,38 @@
             </div>
 
         </section>
-      
+        
+        
+        <section>
+            
+            
+            <div class="d-flex  justify-content-center " style="color:#ffffff; text-align: center; background-color: #000000; border-color: #000000;">
+                <div>
+                    <h2 style="font: 500; color:#ffffff; font-size: 4em; margin: 2em; ">TRIBUTE </h3>
+                </div>
+             
+               
+               
+                
+               
+            </div>
+            <div class="d-flex  justify-content-center " style="color:#ffffff; text-align: center; background-color: #000000; border-color: #000000;">
+               
+                <div>
+                    <img style="height: 350px; width: 300px;" src="images/tribute.png" alt="">
+                </div>
+               
+               
+                
+               
+            </div>
+            
+              
+           </div>
+
+        </section>
+        
+
         <a id="portfolio-4" aria-hidden="true" style="visibility:hidden;"></a>
         
         <section id="ebmz8wDyWGKTgzzQ"

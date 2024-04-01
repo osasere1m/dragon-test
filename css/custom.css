@@ -6,5 +6,10 @@
     #partner-img{
         flex-direction: row;
         justify-content: center;
+    } 
+    #tokenomic_img{
+      height:100px ;
+      width: 60px;
+
     }
   }
